@@ -3,10 +3,9 @@
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
-**shelly-elpris-dk-no** is a Shelly script for controlling outputs based on Nord Pool spot prices  
-in **Denmark (DK1-DK2)** and **Norway (NO1-NO5)**.
+**shelly-elpris-dk-no** is a Shelly script for controlling outputs based on Nord Pool spot prices in Denmark (DK1-DK2) and Norway (NO1-NO5).
 
-The project is a regional adaptation of **shelly-elprisSE**, which itself is based on **shelly-porssisahko v3.1.1** by Jussi Isotalo.  
+The project is a regional adaptation of shelly-elprisSE, which itself is based on [shelly-porssisahko v3.1.1](https://github.com/jisotalo/shelly-porssisahko-en/releases/tag/v.3.1.1) by Jussi Isotalo.  
 Version 3.1.5 shares the same internal architecture and logic as the [SE](https://github.com/Soviet9773Red/shelly-elprisSE) release, but uses Danish and Norwegian price APIs and regional settings.
 
 ---
@@ -33,14 +32,10 @@ Shelly Gen 3-4: - may work, - not fully tested
 
 ## Key features (3.1.5)
 
-- **15-minute price support via API**  
-  Automatic aggregation **96 -> 24 hours** for compatibility with hour-based logic.
 - **Unified DK + NO support**  
   Single build with automatic zone detection and correct API routing.
 - **Improved UI**  
   Refined *Status*, *History*, *Setup* and integrated *Help* tab.
-- **Robust price handling**  
-  Stable parsing of `avg24` format, including DST days (23/25-hour).
 - **Grid fee model**  
   Clear weekday/weekend separation and time-of-day detection (where applicable).
 - **Improved reliability**  
@@ -57,11 +52,11 @@ Prices are fetched via regional APIs and delivered in a compact, Shelly-friendly
 - **[Denmark:](https://www.elprisenligenu.dk/)** `elprisenligenu.dk`
 - **[Norway:](https://www.hvakosterstrommen.no/)** `hvakosterstrommen.no`
 
-At the time of writing, both APIs provide **hourly (24-interval) price data**.  
+At the time of writing, both APIs provide hourly (24-interval) price data.  
 The script parses and operates on this format directly, without any internal aggregation.
 
-The current implementation will continue to work **as long as the APIs keep delivering 24-hour data**.  
-If either API switches to **15-minute intervals** in the future, the script will stop working until a new version is released that is adapted to the updated API format.
+The current implementation will continue to work as long as the APIs keep delivering 24-hour data.  
+If either API switches to *15-minute intervals* in the future, the script will stop working until a new version is released that is adapted to the updated API format.
 
 No transition date for such a change is currently known.
 
