@@ -5,7 +5,7 @@
 
 **shelly-elpris-dk-no** is a Shelly script for controlling outputs based on Nord Pool spot prices in Denmark (DK1-DK2) and Norway (NO1-NO5).
 
-The project is a regional adaptation of shelly-elprisSE, which itself is based on [shelly-porssisahko v3.1.1](https://github.com/jisotalo/shelly-porssisahko-en/releases/tag/v.3.1.1) by Jussi Isotalo.  
+The project is a regional adaptation of shelly-elprisSE, which itself is based on shelly-porssisahko [v3.1.1](https://github.com/jisotalo/shelly-porssisahko-en/releases/tag/v.3.1.1) by Jussi Isotalo.  
 Version 3.1.5 shares the same internal architecture and logic as the [SE](https://github.com/Soviet9773Red/shelly-elprisSE) release, but uses Danish and Norwegian price APIs and regional settings.
 
 ---
