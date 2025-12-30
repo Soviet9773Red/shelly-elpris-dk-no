@@ -1,13 +1,13 @@
-# DK / NO Nord Pool spot price control for Shelly devices  
-## **shelly-elprisDKNO** (v3.1.5)
+# DK/NO Nord Pool spot price control for Shelly devices  
+## **shelly-elpris-dk-no** (v3.1.5)
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
-**shelly-elprisDKNO** is a Shelly script for controlling outputs based on Nord Pool spot prices  
+**shelly-elpris-dk-no** is a Shelly script for controlling outputs based on Nord Pool spot prices  
 in **Denmark (DK1-DK2)** and **Norway (NO1-NO5)**.
 
 The project is a regional adaptation of **shelly-elprisSE**, which itself is based on **shelly-porssisahko v3.1.1** by Jussi Isotalo.  
-Version **3.1.5 DKNO** shares the same internal architecture and logic as the SE release, but uses Danish and Norwegian price APIs and regional settings.
+Version 3.1.5 shares the same internal architecture and logic as the [SE](https://github.com/Soviet9773Red/shelly-elprisSE) release, but uses Danish and Norwegian price APIs and regional settings.
 
 ---
 
@@ -57,10 +57,13 @@ Prices are fetched via regional APIs and delivered in a compact, Shelly-friendly
 - **Denmark:** `elprisenligenu.dk`
 - **Norway:** `hvakosterstrommen.no`
 
-The APIs already provide 15-minute data.  
-Aggregation to hourly values is performed automatically to keep memory usage within Shelly limits.
+At the time of writing, both APIs provide **hourly (24-interval) price data**.  
+The script parses and operates on this format directly, without any internal aggregation.
 
-This aggregation is a **compatibility layer**, not a limitation of the API itself.
+The current implementation will continue to work **as long as the APIs keep delivering 24-hour data**.  
+If either API switches to **15-minute intervals** in the future, the script will stop working until a new version is released that is adapted to the updated API format.
+
+No transition date for such a change is currently known.
 
 ---
 
@@ -72,7 +75,7 @@ This aggregation is a **compatibility layer**, not a limitation of the API itsel
    - **Europe/Copenhagen** (DK)
    - **Europe/Oslo** (NO)
 4. Create a new script in Shelly Web UI.
-5. Paste the latest **shelly-elprisDKNO 3.1.5** build and save.
+5. Paste the latest **[shelly-elpris-dk-no.js](https://github.com/Soviet9773Red/shelly-elpris-dk-no/blob/main/shelly-elpris-dk-no.js) (ver. 3.1.5)**  build and save.
 6. Start the script and open the console.
 
 You will see output similar to:
