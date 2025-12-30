@@ -119,7 +119,7 @@ The Shelly device exposes a lightweight HTTP UI with four tabs:
 An optional addon script can be loaded **after** the main script.  
 It uses temperature data from a Shelly H&T sensor to dynamically adjust the number of cheapest hours.
 
-Addon documentation and examples are located in the `addons/` directory.
+Addon documentation and examples are located in the SE [`addons/`](https://github.com/Soviet9773Red/shelly-elprisSE/tree/main/addons) directory.
 
 ---
 
