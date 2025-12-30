@@ -1,116 +1,146 @@
-# shelly-elprisDK
-DK1-2 Nordpool spotpris kontrol for Shelly-enheder
+# DK / NO Nord Pool spot price control for Shelly devices  
+## **shelly-elprisDKNO** (v3.1.5)
 
-[![Licens: AGPL v3](https://img.shields.io/badge/Licens-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
-**shelly-elprisDK (tilpasset til DK1-2)** er et projekt til at styre Shelly-enheder.  
-Det er baseret på <a href="https://github.com/jisotalo/shelly-porssisahko-en">shelly-porssisahko-en</a> version 3.1.1 og er tilpasset til danske elområder (DK1-2) med API-data fra [Elprisenligenu.dk]([https://www.elprisetjustnu.se/](https://www.elprisenligenu.dk/)).
+**shelly-elprisDKNO** is a Shelly script for controlling outputs based on Nord Pool spot prices  
+in **Denmark (DK1-DK2)** and **Norway (NO1-NO5)**.
 
-Udviklet af [@Soviet9773Red](https://github.com/Soviet9773Red) med kærlighed og taknemmelighed til [Jussi Isotalo](http://jisotalo.fi) / [@jisotalo](https://github.com/jisotalo) for den fantastiske kode.  
-*Stort tak til GPT o1 – min bedste AI, som for altid vil være en del af koden (og nævnes i testamentet)!*
-
-## Funktionalitet
-- Hentning af elpriser fra et dansk API (Nordpool/elprisenligenu.dk).  
-- Beregning af de laveste, højeste og gennemsnitlige elpriser samt identifikation af timen med den laveste og højeste pris.  
-- Visning af enhedens aktuelle status, konfiguration og historik.  
-- Understøttelse af opdatering af konfiguration og styring af udgange (outputs).
-
-## Egenskaber
-- Optimeret og minificeret kode til Shelly-enheder.  
-- Tilpasset til Shelly fw. 1.4.4 med hensyn til begrænsninger (ingen arrow-funktioner, skabelonstrenge etc.).  
-- Enkel HTTP-integration til at hente status, konfiguration og historik.
+The project is a regional adaptation of **shelly-elprisSE**, which itself is based on **shelly-porssisahko v3.1.1** by Jussi Isotalo.  
+Version **3.1.5 DKNO** shares the same internal architecture and logic as the SE release, but uses Danish and Norwegian price APIs and regional settings.
 
 ---
 
-## Vigtig information  
-**[shelly-elprisSE](https://github.com/Soviet9773Red/shelly-elprisSE)** er en dansk tilpasning af det finske projekt **[shelly Porssisahko](https://github.com/jisotalo/shelly-porssisahko)**, oprindeligt udviklet til Finland og Baltikum. Denne version bruger det danske elpris-API [Elprisenligenu.dk](https://www.elprisenligenu.dk/) i stedet for [Elering](https://elering.ee/) standarddata.
+### **Version 3.1.5 primary supports Shelly platform Gen2**
+```
+| Device   | Gen 2 | Gen 3 | Gen 4 |
+|----------|-------|-------|-------|
+| Plus1    |  OK   |  --   |  --   |
+| Plus1 PM |  OK   |  --   |  OK   |
+| Plus2 PM |  OK   |  --   |  --   |
+| Pro 2    |  OK   |  --   |  --   |
+| Pro 3    |  OK   |  --   |  --   |
+| Plug S   |  OK   |  SI   |  --   |
+| Mini PM  |  --   |  SI   |  --   |
 
-Bemærk, at der ikke er foretaget globale ændringer i funktionaliteten sammenlignet med originalkoden fra [shelly-porssisahko-en](https://github.com/jisotalo/shelly-porssisahko-en) (ver. 3.1.1). For en fuldstændig manual, se [originalkilden.](https://github.com/jisotalo/shelly-porssisahko-en)
+-- = Not tested , SI = Shows instability
 
----
-
-## Hovedsaglige ændringer (changelog): 
-- **API-kald:**  
-  Ændret fra den estiske API-adresse i `.csv`-format ([Elering](https://elering.ee/)) til den danske i JSON-format ([Elprisenligenu.dk](https://www.elprisenligenu.dk/)).  
-- **Regioner:**  
-  Understøttelse af danske elområder DK1-DK2 er blevet tilføjet, mens Finland og Baltikum er fjernet.  
-- **Design:**  
-  Justeringer af farveskema og overskrifter i fanerne *Status* og *Settings* for bedre at passe til det danske marked.
-
-For at ændre prisforespørgslen til det danske API har jeg tilføjet to nye funktioner: `bldU` og `pTimeL`, samt ændret den eksisterende funktion `getPrices`.  
-I HTTP-serverens endpoint er visse dele modificeret, bortset fra den femte og sjette del.
-
-## 📷 Indstillingsvisning
-Her er en illustration af info (status) og konfigurationsvisningen:
-<table><tr>
-      <td><img src="https://github.com/Soviet9773Red/shelly-elprisDK/blob/main/StatP.jpg" width="500"></td>
-      <td><img src="https://github.com/Soviet9773Red/shelly-elprisDK/blob/main/SetP.jpg" width="500"></td>
-      </tr>
-</table>
-
-## Kom i gang:
-1. Installér Shelly og tilslut den til WiFi.  
-2. Åbn Shelly Web UI i en webbrowser via din lokale netværksadresse.  
-3. Gå til *Scripts*-siden og åbn **Settings -> Firmware -> Update**.  
-   Opdater firmware til version **1.4.4** eller højere "stable". Ældre versioner understøttes ikke.  
-4. Gå til **Settings -> Location and Time**, vælg tidszonen *Europe/Copenhagen* og klik på *Save Settings*.  
-5. Gå til **Settings -> Device name**. Sæt et navn på din enhed. -> *Save*  
-6. Åbn linket til scriptet på GitHub:  
-👉 [shelly-elprisDK_3.1.1dk-rc.js](https://github.com/Soviet9773Red/shelly-elprisDK/blob/main/shelly-elprisDK_3.1.1dk-rc.js)  
-   Vælg *Download* eller kopier råfilen. Gem filen i *Notepad* eller på din computer.  
-7. Gå til Scripts → Create script og skriv ElprisetDK som Script name.
-Indsæt scriptets tekst, klik på Save og derefter Start.
-
-I konsollen vil du se scriptets resultat, omtrent sådan her:
-
-elpris-DK: v.3.1.1dk-rc<br>
-elpris-DK: URL: http://192.168.8.160/script/1<br>
-elpris-DK: Getting prices for day 0<br> 
-elpris-DK: Getting prices for day 1<br> 
-elpris-DK: config for #1 read, enabled: 1  
-elpris-DK: config for #2 read, enabled: 0  
-elpris-DK: config for #3 read, enabled: 0  
-elpris-DK: logic for #1 done, cmd: true -> output: true  
-
-8. Åbn scriptets HTTP-endpoint  
-   Kopier HTTP-adressen fra konsollen, f.eks. `http://192.168.8.160/script/1`  
-   Åbn linket i en ny fane i din webbrowser.  
-   Adressen kan variere, men strukturen er: `http://xxx.xxx.x.xxx/script/N` hvor `N` er scriptets ID-nummer.  
-   Og `/script/N` er til sidst.
-
-9. Konfigurer scriptets parametre i henhold til [manualen](https://github.com/jisotalo/shelly-porssisahko-en)
+Shelly Gen 3-4: - may work, - not fully tested
+- memory constraints may cause instability
+```
 
 ---
 
-### Hvis du har problemer med at gemme eller starte scriptet:
-- Stop alle scripts. Fjern markeringen af *Run on startup*.  
-- Gå til **Settings -> Reboot Device**.  
-- Sæt *Run on startup* igen.  
-- Hvis du har andre aktive scripts – stop dem.  
-- Slet store scripts, hvis du allerede har flere gemt på enheden.  
-- Ryd KVS og fjern unødvendige nøgler.
+## Key features (3.1.5)
+
+- **15-minute price support via API**  
+  Automatic aggregation **96 -> 24 hours** for compatibility with hour-based logic.
+- **Unified DK + NO support**  
+  Single build with automatic zone detection and correct API routing.
+- **Improved UI**  
+  Refined *Status*, *History*, *Setup* and integrated *Help* tab.
+- **Robust price handling**  
+  Stable parsing of `avg24` format, including DST days (23/25-hour).
+- **Grid fee model**  
+  Clear weekday/weekend separation and time-of-day detection (where applicable).
+- **Improved reliability**  
+  Fixes for day rollover, VAT calculation, override persistence and spot price display.
+- **Optional H&T temperature addon**  
+  Dynamic adjustment of cheapest hours based on Shelly H&T sensor data.
 
 ---
 
-### Test
+## Price data sources
 
-Scriptet er testet på:  
-**Shelly Plus 1, Plus 1PM, Pro 3, Plus Plug S**  
-Ifølge [Jussi Isotalo](http://jisotalo.fi) [fungerer](https://github.com/jisotalo/shelly-porssisahko-en?tab=readme-ov-file#shelly-devices) det også på:  
-**Shelly Plus 2PM, Pro 1, Pro 2, Pro 4PM, Pro 3EM + Switch Add-on, Plus UNI, Plus 1 Mini**  
-Jeg har dog ikke selv testet disse.
+Prices are fetched via regional APIs and delivered in a compact, Shelly-friendly format:
 
-Ved egne tests har jeg bemærket, at scriptet ikke altid er helt stabilt ved prisforespørgsler – det kan i visse tilfælde stoppe på grund af hukommelsesoverløb.
+- **Denmark:** `elprisenligenu.dk`
+- **Norway:** `hvakosterstrommen.no`
 
-Derfor er jeg meget taknemmelig for enhver, der kan hjælpe med test og fejlrapportering.
+The APIs already provide 15-minute data.  
+Aggregation to hourly values is performed automatically to keep memory usage within Shelly limits.
 
-Netop af denne grund har versionsnummeret endelsen rc (release candidate).
+This aggregation is a **compatibility layer**, not a limitation of the API itself.
+
+---
+
+## Getting started
+
+1. Connect your Shelly device to the network.
+2. Update firmware to latest **stable** (>= 1.7.x recommended).
+3. Set timezone:
+   - **Europe/Copenhagen** (DK)
+   - **Europe/Oslo** (NO)
+4. Create a new script in Shelly Web UI.
+5. Paste the latest **shelly-elprisDKNO 3.1.5** build and save.
+6. Start the script and open the console.
+
+You will see output similar to:
+```
+elpris-SE: v.3.1.5_11
+elpris-SE: URL http://192.168.8.119/script/1
+```
 
 
-### Støt projektet!
-Jeg bliver tit sulten, når jeg koder – 🍔 [giv mig en Big Mac og en kaffe](https://buymeacoffee.com/soviet9773red)
+7. Open the HTTP endpoint shown in the console.
+
+> Note: `/script/N` depends on the script slot used on your device.
+
+---
+
+## Important notes
+
+- **KVS structure changed in 3.1.5**  
+  Configuration slot **#3 was removed**.  
+  Old KVS keys from earlier versions should be deleted before first start.
+- The script assumes **hour-based control logic** even though price input is 15-minute based.
+- This version is optimized for **stability on constrained devices**, not raw data volume.
+
+---
+
+## Built-in web interface
+
+The Shelly device exposes a lightweight HTTP UI with four tabs:
+
+| Tab | Description |
+|-----|-------------|
+| **Status** | Current state, prices, outputs and active logic |
+| **History** | Logged actions and state changes |
+| **Setup** | Zone, VAT, tariffs, outputs and overrides |
+| **Help** | Embedded documentation and usage notes |
+
+---
+
+## H&T temperature addon
+
+An optional addon script can be loaded **after** the main script.  
+It uses temperature data from a Shelly H&T sensor to dynamically adjust the number of cheapest hours.
+
+Addon documentation and examples are located in the `addons/` directory.
+
+---
+
+## Background and credits
+
+Developed by **@Soviet9773Red**  
+Based on **shelly-porssisahko** by **Jussi Isotalo**  
+With additional ideas and JSON optimizations inspired by the community.
+
+---
+
+## Source code and build system
+
+The public repository contains **ready-to-use builds** only.  
+Internal build tooling, sources and npm-based environment are currently not public.
+
+Forks, adaptations or collaboration can be discussed via GitHub Issues.
+
+---
+
+## Support the project
+
+Keeping the proxy infrastructure and APIs online costs time and money.  
+If this project saves you electricity or hardware headaches, support is welcome.
 
 [![Big Mac](https://img.shields.io/badge/Buy%20me%20a%20🍔-Big%20Mac-yellow?style=for-the-badge)](https://buymeacoffee.com/soviet9773red)
-
-Tak skal du have!
 
