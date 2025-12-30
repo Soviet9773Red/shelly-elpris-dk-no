@@ -75,6 +75,9 @@ No transition date for such a change is currently known.
    - **Europe/Copenhagen** (DK)
    - **Europe/Oslo** (NO)
 4. Create a new script in Shelly Web UI.
+      <img src="https://github.com/Soviet9773Red/shelly-elpris-dk-no/blob/main/img/stat.jpg?raw=true" width="518"
+  align="right"
+     style="margin-right:15px; margin-bottom:10px;">
 5. Paste the latest **[shelly-elpris-dk-no.js](https://github.com/Soviet9773Red/shelly-elpris-dk-no/blob/main/shelly-elpris-dk-no.js) (ver. 3.1.5)**  build and save.
 6. Start the script and open the console.
 
@@ -89,17 +92,7 @@ elpris-SE: URL http://192.168.8.119/script/1
 
 > Note: `/script/N` depends on the script slot used on your device.
 
----
 
-## Important notes
-
-- **KVS structure changed in 3.1.5**  
-  Configuration slot **#3 was removed**.  
-  Old KVS keys from earlier versions should be deleted before first start.
-- The script assumes **hour-based control logic** even though price input is 15-minute based.
-- This version is optimized for **stability on constrained devices**, not raw data volume.
-
----
 
 ## Built-in web interface
 
@@ -112,7 +105,17 @@ The Shelly device exposes a lightweight HTTP UI with four tabs:
 | **Setup** | Zone, VAT, tariffs, outputs and overrides |
 | **Help** | Embedded documentation and usage notes |
 
+
+
+## Important notes
+
+- **KVS structure changed in 3.1.5**  
+  Configuration slot **#3 was removed**.  Old KVS keys from earlier versions should be deleted before first start.
+- The script assumes **hour-based control logic** though price input is 24-hour based.
+
 ---
+<br clear="all">
+
 
 ## H&T temperature addon
 
