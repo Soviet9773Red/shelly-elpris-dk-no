@@ -94,11 +94,11 @@ elpris-SE: URL http://192.168.8.119/script/1
 
 <br clear="all">
 
+## Built-in web interface
+
   <img src="https://github.com/Soviet9773Red/shelly-elpris-dk-no/blob/main/img/stat.jpg?raw=true" width="518"
   align="left"
   style="margin-right:15px; margin-bottom:10px;">
-
-## Built-in web interface
 
 The Shelly device exposes a lightweight HTTP UI with four tabs:
 
