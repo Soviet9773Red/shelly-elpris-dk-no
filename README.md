@@ -113,9 +113,12 @@ The Shelly device exposes a lightweight HTTP UI with four tabs:
   Configuration slot **#3 was removed**.  Old KVS keys from earlier versions should be deleted before first start.
 - The script assumes **hour-based control logic** though price input is 24-hour based.
 
----
+
 <br clear="all">
 
+<br>
+
+---
 
 ## H&T temperature addon
 
