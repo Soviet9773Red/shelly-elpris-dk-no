@@ -54,8 +54,8 @@ Shelly Gen 3-4: - may work, - not fully tested
 
 Prices are fetched via regional APIs and delivered in a compact, Shelly-friendly format:
 
-- **Denmark:** `elprisenligenu.dk`
-- **Norway:** `hvakosterstrommen.no`
+- **[Denmark:](https://www.elprisenligenu.dk/)** `elprisenligenu.dk`
+- **[Norway:](https://www.hvakosterstrommen.no/)** `hvakosterstrommen.no`
 
 At the time of writing, both APIs provide **hourly (24-interval) price data**.  
 The script parses and operates on this format directly, without any internal aggregation.
