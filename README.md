@@ -78,8 +78,8 @@ No transition date for such a change is currently known.
 
 You will see output similar to:
 ```
-elpris-SE: v.3.1.5_12
-elpris-SE: URL http://192.168.8.119/script/1
+elpris: v.3.1.5_12
+elpris: URL http://192.168.8.119/script/1
 ```
 
 
