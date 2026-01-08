@@ -8,7 +8,7 @@
 The project is a regional adaptation of shelly-elprisSE, which itself is based on shelly-porssisahko [v3.1.1](https://github.com/jisotalo/shelly-porssisahko-en/releases/tag/v.3.1.1) by Jussi Isotalo.  
 Version 3.1.5 shares the same internal architecture and logic as the [SE](https://github.com/Soviet9773Red/shelly-elprisSE) release, but uses Danish and Norwegian price APIs and regional settings.
 
----
+
 
 ### **Version 3.1.5 primary supports Shelly platform Gen2**
 ```
@@ -28,7 +28,7 @@ Shelly Gen 3-4: - may work, - not fully tested
 - memory constraints may cause instability
 ```
 
----
+
 
 ## Key features (3.1.5)
 
@@ -43,7 +43,7 @@ Shelly Gen 3-4: - may work, - not fully tested
 - **Optional H&T temperature addon**  
   Dynamic adjustment of cheapest hours based on Shelly H&T sensor data.
 
----
+
 
 ## Price data sources
 
@@ -60,7 +60,6 @@ If either API switches to *15-minute intervals* in the future, the script will s
 
 No transition date for such a change is currently known.
 
----
 
 ## Getting started
 
@@ -90,8 +89,7 @@ elpris: URL http://192.168.8.119/script/1
 <br clear="all">
 
 ## Built-in web interface
-
-  <img src="https://github.com/Soviet9773Red/shelly-elpris-dk-no/blob/main/img/stat.jpg?raw=true" width="518"
+<img src="https://github.com/Soviet9773Red/shelly-elpris-dk-no/blob/main/img/stat.jpg?raw=true" width="396"
   align="left"
   style="margin-right:15px; margin-bottom:10px;">
   
@@ -116,7 +114,7 @@ The Shelly device exposes a lightweight HTTP UI with four tabs:
 
 <br>
 
----
+
 
 ## H&T temperature addon
 
@@ -125,7 +123,7 @@ It uses temperature data from a Shelly H&T sensor to dynamically adjust the numb
 
 Addon documentation and examples are located in the SE [`addons/`](https://github.com/Soviet9773Red/shelly-elprisSE/tree/main/addons) directory.
 
----
+
 
 ## Background and credits
 
@@ -133,7 +131,7 @@ Developed by **@Soviet9773Red**
 Based on **shelly-porssisahko** by **Jussi Isotalo**  
 With additional ideas and JSON optimizations inspired by the community.
 
----
+
 
 ## Source code and build system
 
@@ -142,7 +140,7 @@ Internal build tooling, sources and npm-based environment are currently not publ
 
 Forks, adaptations or collaboration can be discussed via GitHub Issues.
 
----
+
 
 ## Support the project
 
