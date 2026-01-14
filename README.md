@@ -140,6 +140,18 @@ Internal build tooling, sources and npm-based environment are currently not publ
 
 Forks, adaptations or collaboration can be discussed via GitHub Issues.
 
+---
+
+### Visual overview [shelly-device-map](https://github.com/Soviet9773Red/shelly-device-map) (optional)
+
+When using this script on multiple Shelly devices, it can be convenient to add a simple visual overview.
+
+The **Shelly Device Map** project provides a lightweight, static HTML page where devices can be placed on a floor plan and linked by their local IP addresses. This makes it easy to quickly access the Shelly Web UI, running scripts, and status endpoints from a single view.
+
+Shelly Device Map is fully static, requires no backend, and can be opened locally or hosted on a small device such as a Raspberry Pi.   
+Project link: [shelly-device-map](https://github.com/Soviet9773Red/shelly-device-map) 
+
+---
 
 
 ## Support the project
