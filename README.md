@@ -148,7 +148,7 @@ When using this script on multiple Shelly devices, it can be convenient to add a
 
 The **[shelly-device-map](https://github.com/Soviet9773Red/shelly-device-map)** project provides a lightweight, static HTML page where devices can be placed on a floor plan and linked by their local IP addresses. This makes it easy to quickly access the Shelly Web UI, running scripts, and status endpoints from a single view.
 
-Shelly Device Map is fully static, requires no backend, and can be opened locally or hosted on a small device such as a Raspberry Pi.   
+Shelly Device Map ([demo](https://soviet9773red.github.io/shelly-device-map/)) is fully static, requires no backend, and can be opened locally or hosted on a small device such as a Raspberry Pi.   
 
 ---
 
