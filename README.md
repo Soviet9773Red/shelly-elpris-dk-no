@@ -19,13 +19,12 @@ Version 3.1.5 shares the same internal architecture and logic as the [SE](https:
 | Plus2 PM |  OK   |  --   |  --   |
 | Pro 2    |  OK   |  --   |  --   |
 | Pro 3    |  OK   |  --   |  --   |
-| Plug S   |  OK   |  SI   |  --   |
+| Plug S   |  OK   |  OK   |  --   |
 | Mini PM  |  --   |  SI   |  --   |
 
 -- = Not tested , SI = Shows instability
 
-Shelly Gen 3-4: - may work, - not fully tested
-- memory constraints may cause instability
+Shelly Gen3 and Gen4 devices are supported, provided that Matter is disabled.
 ```
 
 
